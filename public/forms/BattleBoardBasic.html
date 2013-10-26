@@ -12,11 +12,6 @@ tr {
 }
 </style>
 <script>
-function forward() {
-	var name = document.getElementById('BattleBoardName').value;
-	document.getElementById('cName').value = name;
-	document.getElementbyId('eName').value = name;
-}
 function hide() {
     document.getElementById('cSpells').style.visibility="hidden";
 	document.getElementById('cSpells').style.display="none";
@@ -39,151 +34,149 @@ function Earth(){
 </script>
 </header>
 <body>
-<p>BattleBoard Name: <input id="BattleBoardName" type="text" onchange="forward();"/> </p>
+<p>BattleBoard Name: <input id="BattleBoardName" input type="text" name="battleBoardName"/> </p>
 <input type="button" value="Celestial" onclick="Celestial()" />
 <input type="button" value="Earth" onclick="Earth()" />
+<form name="SpellsForm" method="Post" action="/form">
 <div id="cSpells">
-<form name="cSpellsForm" method="Post" action="/form">
 <table>
 <tr> 
-	<td colspan= "3">Celestial  Spells <input type="text" id="cName" name="cBattleBoardName" style="visibility: hidden;" /> </td>
+	<td colspan= "3">Celestial  Spells </td>
 </tr>
 <tr>
 <td rowspan="4"> Level 1 </td>
-	<td>Disarm</td> <td><input type="text" name="cDisarm" size="2"/> </td> </tr>
-	<tr> <td>Fortress</td> <td><input type="text" name="cFortress" size="2"/> </td> </tr>
-	<tr> <td>Light</td> <td><input type="text" name="cLight" size="2"/> </td> </tr>
-	<tr><td>Stone Bolt</td> <td><input type="text" name="cStoneBolt" size="2"/> </td> </tr>
+	<td>Disarm</td> <td><input input type="number" min="1" max="99" name="celestial[one][disarm]" size="2"/> </td> </tr>
+	<tr> <td>Fortress</td> <td><input input type="number" min="1" max="99" name="celestial[one][fortress]" size="2"/> </td> </tr>
+	<tr> <td>Light</td> <td><input input type="number" min="1" max="99" name="celestial[one][light]" size="2"/> </td> </tr>
+	<tr><td>Stone Bolt</td> <td><input input type="number" min="1" max="99" name="celestial[one][stoneBolt]" size="2"/> </td> </tr>
 <tr>
 <td rowspan="5">  Level 2 </td>
-	<td>Lightning Bolt </td> <td><input type="text" name="cLightningBolt" size="2"/> </td> </tr>
-	<tr><td> Magic Armor </td> <td><input type="text" name="cMagicArmor" size="2"/> </td></tr>
-	<tr><td> Pin </td> <td><input type="text" name="cPin" size="2"/> </td> </tr>
-	<tr><td>Repel </td> <td><input type="text" name="cRepel" size="2"/> </td></tr>
-	<tr><td>Shield </td> <td><input type="text" name="cShield" size="2"/> </td></tr>
+	<td>Lightning Bolt </td> <td><input input type="number" min="1" max="99" name="celestial[two][lightningBolt]" size="2"/> </td> </tr>
+	<tr><td> Magic Armor </td> <td><input input type="number" min="1" max="99" name="celestial[two][magicArmor]" size="2"/> </td></tr>
+	<tr><td> Pin </td> <td><input input type="number" min="1" max="99" name="celestial[two][pin]" size="2"/> </td> </tr>
+	<tr><td>Repel </td> <td><input input type="number" min="1" max="99" name="celestial[two][repel]" size="2"/> </td></tr>
+	<tr><td>Shield </td> <td><input input type="number" min="1" max="99" name="celestial[two][shield]" size="2"/> </td></tr>
 
 <tr>
 <td rowspan="5">Level 3 </td>
-	<td>Bind </td> <td><input type="text" name="cBind" size="2"/></td> </tr>
-	<tr><td>Ice Bolt </td> <td><input type="text" name="cIceBolt" size="2"/></td> </tr>
-	<tr><td>Lesser Investment </tindd> <td><input type="text" name="cLesserInvestment" size="2"/></td> </tr>
-	<tr><td>Shatter </td> <td><input type="text" name="cShatter" size="2"/></td> </tr>
-	<tr><td>Wall of Force</td> <td><input type="text" name="cWallOfForce" size="2"/></td> </tr>
+	<td>Bind </td> <td><input input type="number" min="1" max="99" name="celestial[three][bind]" size="2"/></td> </tr>
+	<tr><td>Ice Bolt </td> <td><input input type="number" min="1" max="99" name="celestial[three][iceBolt]" size="2"/></td> </tr>
+	<tr><td>Lesser Investment </tindd> <td><input input type="number" min="1" max="99" name="celestial[three][lesserInvestment]" size="2"/></td> </tr>
+	<tr><td>Shatter </td> <td><input input type="number" min="1" max="99" name="celestial[three][shatter]" size="2"/></td> </tr>
+	<tr><td>Wall of Force</td> <td><input input type="number" min="1" max="99" name="celestial[three][wallOfForce]" size="2"/></td> </tr>
 	
 <tr>
 <td rowspan="5"> Level 4</td>
-	<td>Awaken</td> <td><input type="text" name="cAwaken" size="2"/></td> </tr>
-	<tr><td>Banish</td> <td><input type="text" name="cBanish" size="2"/></td> </tr>
-	<tr><td>Elemental Blade</td> <td><input type="text" name="cElementalBlade" size="2"/></td> </tr>
-	<tr><td>Flame Bolt</td> <td><input type="text" name="cFlameBolt" size="2"/></td> </tr>
-	<tr><td>Shun</td> <td><input type="text" name="cShun" size="2"/></td> </tr>
+	<td>Awaken</td> <td><input input type="number" min="1" max="99" name="celestial[four][awaken]" size="2"/></td> </tr>
+	<tr><td>Banish</td> <td><input input type="number" min="1" max="99" name="celestial[four][banish]" size="2"/></td> </tr>
+	<tr><td>Elemental Blade</td> <td><input input type="number" min="1" max="99" name="celestial[four][elementalBlade]" size="2"/></td> </tr>
+	<tr><td>Flame Bolt</td> <td><input input type="number" min="1" max="99" name="celestial[four][flameBolt]" size="2"/></td> </tr>
+	<tr><td>Shun</td> <td><input input type="number" min="1" max="99" name="celestial[four][shun]" size="2"/></td> </tr>
 	
 <tr>
 <td rowspan="4">Level 5</td>
-	<td>Release</td> <td><input type="text" name="cRelease" size="2"/></td> </tr>
-	<tr><td>Spell Shield</td> <td><input type="text" name="cSpellShield" size="2"/></td> </tr>
-	<tr><td>Stone Storm</td> <td><input type="text" name="cStoneStorm" size="2"/></td> </tr>
-	<tr><td>Web</td> <td><input type="text" name="cWeb" size="2"/></td> </tr>
+	<td>Release</td> <td><input input type="number" min="1" max="99" name="celestial[five][release]" size="2"/></td> </tr>
+	<tr><td>Spell Shield</td> <td><input input type="number" min="1" max="99" name="celestial[five][spellShield]" size="2"/></td> </tr>
+	<tr><td>Stone Storm</td> <td><input input type="number" min="1" max="99" name="celestial[five][stoneStorm]" size="2"/></td> </tr>
+	<tr><td>Web</td> <td><input input type="number" min="1" max="99" name="celestial[five][web]" size="2"/></td> </tr>
 	
 <tr>
 <td rowspan="5"> Level 6</td>
-	<td>Elemental Shield</td> <td><input type="text" name="cElementalShield" size="2"/></td> </tr>
-	<tr><td>Enflame</td> <td><input type="text" name="cEnflame" size="2"/></td> </tr>
-	<tr><td>Lightning Storm</td> <td><input type="text" name="cLightningStorm" size="2"/></td> </tr>
-	<tr><td>Magic Blade</td> <td><input type="text" name="cMagicBlade" size="2"/></td> </tr>
-	<tr><td>Sleep</td> <td><input type="text" name="cSleep" size="2"/></td> </tr>
+	<td>Elemental Shield</td> <td><input input type="number" min="1" max="99" name="celestial[six][elementalShield]" size="2"/></td> </tr>
+	<tr><td>Enflame</td> <td><input input type="number" min="1" max="99" name="celestial[six][enflame]" size="2"/></td> </tr>
+	<tr><td>Lightning Storm</td> <td><input input type="number" min="1" max="99" name="celestial[six][lightningStorm]" size="2"/></td> </tr>
+	<tr><td>Magic Blade</td> <td><input input type="number" min="1" max="99" name="celestial[six][magicBlade]" size="2"/></td> </tr>
+	<tr><td>Sleep</td> <td><input input type="number" min="1" max="99" name="celestial[six][sleep]" size="2"/></td> </tr>
 	
 <tr>
 <td rowspan="5">Level 7</td>
-	<td>Charm</td> <td><input type="text" name="cCharm" size="2"/></td> </tr>
-	<tr><td>Confine</td> <td><input type="text" name="cConfine" size="2"/></td> </tr>
-	<tr><td>Destroy</td> <td><input type="text" name="cDestroy" size="2"/></td> </tr>
-	<tr><td>Ice Storm</td> <td><input type="text" name="cIceStorm" size="2"/></td> </tr>
-	<tr><td>Subjugate</td> <td><input type="text" name="cSubjugate" size="2"/></td> </tr>
+	<td>Charm</td> <td><input input type="number" min="1" max="99" name="celestial[seven][charm]" size="2"/></td> </tr>
+	<tr><td>Confine</td> <td><input input type="number" min="1" max="99" name="celestial[seven][confine]" size="2"/></td> </tr>
+	<tr><td>Destroy</td> <td><input input type="number" min="1" max="99" name="celestial[seven][destroy]" size="2"/></td> </tr>
+	<tr><td>Ice Storm</td> <td><input input type="number" min="1" max="99" name="celestial[seven][iceStorm]" size="2"/></td> </tr>
+	<tr><td>Subjugate</td> <td><input input type="number" min="1" max="99" name="celestial[seven][subjugate]" size="2"/></td> </tr>
 	
 <tr>
 <td rowspan="5">Level 8</td>
-	<td>Dispel</td> <td><input type="text" name="cDispel" size="2"/></td> </tr>
-	<tr><td>Dragon's Breath</td> <td><input type="text" name="cDragonsBreath" size="2"/></td> </tr>
-	<tr><td>Reflect Magic</td> <td><input type="text" name="cReflectMagic" size="2"/></td> </tr>
-	<tr><td>Solidify</td> <td><input type="text" name="cSolidify" size="2"/></td> </tr>
-	<tr><td>Wizard Lock</td> <td><input type="text" name="cWizardLock" size="2"/></td> </tr>
+	<td>Dispel</td> <td><input input type="number" min="1" max="99" name="celestial[eight][dispel]" size="2"/></td> </tr>
+	<tr><td>Dragon's Breath</td> <td><input input type="number" min="1" max="99" name="celestial[eight][dragonsBreath]" size="2"/></td> </tr>
+	<tr><td>Reflect Magic</td> <td><input input type="number" min="1" max="99" name="celestial[eight][reflectMagic]" size="2"/></td> </tr>
+	<tr><td>Solidify</td> <td><input input type="number" min="1" max="99" name="celestial[eight][solidify]" size="2"/></td> </tr>
+	<tr><td>Wizard Lock</td> <td><input input type="number" min="1" max="99" name="celestial[eight][wizardLock]" size="2"/></td> </tr>
 <tr>
 <td rowspan="5">Level 9</td>
-	<td>Circle of Power</td> <td><input type="text" name="cCircleOfPower" size="2"/></td> </tr>
-	<tr><td>Elemental Blast</td> <td><input type="text" name="cElementalBlast" size="2"/></td> </tr>
-	<tr><td>Magic Storm</td> <td><input type="text" name="cMagicStorm" size="2"/></td> </tr>
-	<tr><td>Prison</td> <td><input type="text" name="cPrison" size="2"/></td> </tr>
-	<tr><td>Ward</td> <td><input type="text" name="cWard" size="2"/></td> </tr>
+	<td>Circle of Power</td> <td><input input type="number" min="1" max="99" name="celestial[nine][circleOfPower]" size="2"/></td> </tr>
+	<tr><td>Elemental Blast</td> <td><input input type="number" min="1" max="99" name="celestial[nine][elementalBlast]" size="2"/></td> </tr>
+	<tr><td>Magic Storm</td> <td><input input type="number" min="1" max="99" name="celestial[nine][magicStorm]" size="2"/></td> </tr>
+	<tr><td>Prison</td> <td><input input type="number" min="1" max="99" name="celestial[nine][prison]" size="2"/></td> </tr>
+	<tr><td>Ward</td> <td><input input type="number" min="1" max="99" name="celestial[nine][ward]" size="2"/></td> </tr>
 </table>
-<input type="submit" name="cSubmit" value="Submit" />
-</form>
 </div>
 
 <div id="eSpells">
-<form name="eSpellsForm" method="Post" action="/form">
 <table>
-<tr> <td colspan="3"> Earth Spells <input id="eName" type="text" name="eBattleBoardName" value="document.getElementById('BattleBoardName').value" /> </td> </tr>
+<tr> <td colspan="3"> Earth Spells </td> </tr>
 <tr><td rowspan="4">Level 1</td>
-	<td>Cure Disease/ Disease</td><td><input type="text" name="eCureDisease" size="2"/></td></tr>
-	<tr><td>Cure Light Wounds / Cause Light Wounds</td><td><input type="text" name="eCureLight" size="2"/></td></tr>
-	<tr><td>Disarm</td><td><input type="text" name="eDisarm" size="2"/></td></tr>
-	<tr><td>Endow</td><td><input type="text" name="eEndow" size="2"/></td></tr>
+	<td>Cure Disease/ Disease</td><td><input input type="number" min="1" max="99" name="earth[one][cureDisease]" size="2"/></td></tr>
+	<tr><td>Cure Light Wounds / Cause Light Wounds</td><td><input input type="number" min="1" max="99" name="earth[one][cureLight]" size="2"/></td></tr>
+	<tr><td>Disarm</td><td><input input type="number" min="1" max="99" name="earth[one][disarm]" size="2"/></td></tr>
+	<tr><td>Endow</td><td><input input type="number" min="1" max="99" name="earth[one][endow]" size="2"/></td></tr>
 
 <tr><td rowspan="5"> Level 2</td>
-	<td>Bless</td><td><input type="text" name="eBless" size="2"/></td></tr>
-	<tr><td>Cure Wounds / Cause Wounds</td><td><input type="text" name="eCureWounds" size="2"/></td></tr>
-	<tr><td>Magic Armor</td><td><input type="text" name="eMagicArmor" size="2"/></td></tr>
-	<tr><td>Pin</td><td><input type="text" name="ePin" size="2"/></td></tr>
-	<tr><td>Repel</td><td><input type="text" name="eRepel" size="2"/></td></tr>
+	<td>Bless</td><td><input input type="number" min="1" max="99" name="earth[two][bless]" size="2"/></td></tr>
+	<tr><td>Cure Wounds / Cause Wounds</td><td><input input type="number" min="1" max="99" name="earth[two][cureWounds]" size="2"/></td></tr>
+	<tr><td>Magic Armor</td><td><input input type="number" min="1" max="99" name="earth[two][magicArmor]" size="2"/></td></tr>
+	<tr><td>Pin</td><td><input input type="number" min="1" max="99" name="earth[two][pin]" size="2"/></td></tr>
+	<tr><td>Repel</td><td><input input type="number" min="1" max="99" name="earth[two][repel]" size="2"/></td></tr>
 
 <tr><td rowspan="5">Level 3</td>
-	<td>Bind</td><td><input type="text" name="eBind" size="2"/></td></tr>
-	<tr><td>Harm Undead/ Help Undead</td><td><input type="text" name="eHarmUndead" size="2"/></td></tr>
-	<tr><td>Sanctuary/ Desecrate</td><td><input type="text" name="eSanctuary" size="2"/></td></tr>
-	<tr><td>Shatter</td><td><input type="text" name="eShatter" size="2"/></td></tr>
-	<tr><td>Weakness / Remove Weakness</td><td><input type="text" name="eWeakness" size="2"/></td></tr>
+	<td>Bind</td><td><input input type="number" min="1" max="99" name="earth[three][bind]" size="2"/></td></tr>
+	<tr><td>Harm Undead/ Help Undead</td><td><input input type="number" min="1" max="99" name="earth[three][harmUndead]" size="2"/></td></tr>
+	<tr><td>Sanctuary/ Desecrate</td><td><input input type="number" min="1" max="99" name="earth[three][sanctuary]" size="2"/></td></tr>
+	<tr><td>Shatter</td><td><input input type="number" min="1" max="99" name="earth[three][shatter]" size="2"/></td></tr>
+	<tr><td>Weakness / Remove Weakness</td><td><input input type="number" min="1" max="99" name="earth[three][weakness]" size="2"/></td></tr>
 
 <tr><td rowspan="5">Level 4</td>
-	<td>Awaken</td><td><input type="text" name="eAwaken" size="2"/></td></tr>
-	<tr><td>Cure Serious Wounds / Cause Serious Wounds</td><td><input type="text" name="eCureSerious" size="2"/></td></tr>
-	<tr><td>Poison Shield</td><td><input type="text" name="ePoisonShield" size="2"/></td></tr>
-	<tr><td>Shun</td><td><input type="text" name="eShun" size="2"/></td></tr>
-	<tr><td>Turn Undead / Control Undead</td><td><input type="text" name="eTurnUndead" size="2"/></td></tr>
+	<td>Awaken</td><td><input input type="number" min="1" max="99" name="earth[four][awaken]" size="2"/></td></tr>
+	<tr><td>Cure Serious Wounds / Cause Serious Wounds</td><td><input input type="number" min="1" max="99" name="earth[four][cureSerious]" size="2"/></td></tr>
+	<tr><td>Poison Shield</td><td><input input type="number" min="1" max="99" name="earth[four][poisonShield]" size="2"/></td></tr>
+	<tr><td>Shun</td><td><input input type="number" min="1" max="99" name="earth[four][shun]" size="2"/></td></tr>
+	<tr><td>Turn Undead / Control Undead</td><td><input input type="number" min="1" max="99" name="earth[four][turnUndead]" size="2"/></td></tr>
 
 <tr><td rowspan="4">Level 5</td>
-	<td>Release</td><td><input type="text" name="eRelease" size="2"/></td></tr>
-	<tr><td>Silence / Remove Silence</td><td><input type="text" name="eSilence" size="2"/></td></tr>
-	<tr><td>Spell Shield</td><td><input type="text" name="eSpellShield" size="2"/></td></tr>
-	<tr><td>Web</td><td><input type="text" name="eWeb" size="2"/></td></tr>
+	<td>Release</td><td><input input type="number" min="1" max="99" name="earth[five][release]" size="2"/></td></tr>
+	<tr><td>Silence / Remove Silence</td><td><input input type="number" min="1" max="99" name="earth[five][silence]" size="2"/></td></tr>
+	<tr><td>Spell Shield</td><td><input input type="number" min="1" max="99" name="earth[five][spellShield]" size="2"/></td></tr>
+	<tr><td>Web</td><td><input input type="number" min="1" max="99" name="earth[five][web]" size="2"/></td></tr>
 
 <tr><td rowspan="5">Level 6</td>
-	<td>Cure Critical Wounds / Cause Critical Wounds</td><td><input type="text" name="eCureCritical" size="2"/></td></tr>
-	<tr><td>Earth Blade / Chaos Blade</td><td><input type="text" name="eEarthBlade" size="2"/></td></tr>
-	<tr><td>Elemental Shield</td><td><input type="text" name="eElementalShield" size="2"/></td></tr>
-	<tr><td>Restore / Wither</td><td><input type="text" name="eRestore" size="2"/></td></tr>
-	<tr><td>Sleep</td><td><input type="text" name="eSleep" size="2"/></td></tr>
+	<td>Cure Critical Wounds / Cause Critical Wounds</td><td><input input type="number" min="1" max="99" name="earth[six][cureCritical]" size="2"/></td></tr>
+	<tr><td>Earth Blade / Chaos Blade</td><td><input input type="number" min="1" max="99" name="earth[six][earthBlade]" size="2"/></td></tr>
+	<tr><td>Elemental Shield</td><td><input input type="number" min="1" max="99" name="earth[six][elementalShield]" size="2"/></td></tr>
+	<tr><td>Restore / Wither</td><td><input input type="number" min="1" max="99" name="earth[six][restore]" size="2"/></td></tr>
+	<tr><td>Sleep</td><td><input input type="number" min="1" max="99" name="earth[six][sleep]" size="2"/></td></tr>
 
 <tr><td rowspan="5">Level 7</td>
-	<td>Charm</td><td><input type="text" name="eCharm" size="2"/></td></tr>
-	<tr><td>Confine</td><td><input type="text" name="eConfine" size="2"/></td></tr>
-	<tr><td>Destroy</td><td><input type="text" name="eDestroy" size="2"/></td></tr>
-	<tr><td>Destroy Undead / Create Undead</td><td><input type="text" name="eDestroyUndead" size="2"/></td></tr>
-	<tr><td>Destruction / Remove Destruction</td><td><input type="text" name="eDestruction" size="2"/></td></tr>
+	<td>Charm</td><td><input input type="number" min="1" max="99" name="earth[seven][charm]" size="2"/></td></tr>
+	<tr><td>Confine</td><td><input input type="number" min="1" max="99" name="earth[seven][confine]" size="2"/></td></tr>
+	<tr><td>Destroy</td><td><input input type="number" min="1" max="99" name="earth[seven][destroy]" size="2"/></td></tr>
+	<tr><td>Destroy Undead / Create Undead</td><td><input input type="number" min="1" max="99" name="earth[seven][destroyUndead]" size="2"/></td></tr>
+	<tr><td>Destruction / Remove Destruction</td><td><input input type="number" min="1" max="99" name="earth[seven][destruction]" size="2"/></td></tr>
 
 <tr><td rowspan="4"> Level 8</td>
-	<td>Cure Mortal Wounds / Cause Mortal Wounds</td><td><input type="text" name="eCureMortal" size="2"/></td></tr>
-	<tr><td>Paralysis / Remove Paralysis</td><td><input type="text" name="eParalysis" size="2"/></td></tr>
-	<tr><td>Purify / Drain</td><td><input type="text" name="ePurify" size="2"/></td></tr>
-	<tr><td>Reflect Magic</td><td><input type="text" name="eReflectMagic" size="2"/></td></tr>
+	<td>Cure Mortal Wounds / Cause Mortal Wounds</td><td><input input type="number" min="1" max="99" name="earth[eight][cureMortal]" size="2"/></td></tr>
+	<tr><td>Paralysis / Remove Paralysis</td><td><input input type="number" min="1" max="99" name="earth[eight][paralysis]" size="2"/></td></tr>
+	<tr><td>Purify / Drain</td><td><input input type="number" min="1" max="99" name="earth[eight][purify]" size="2"/></td></tr>
+	<tr><td>Reflect Magic</td><td><input input type="number" min="1" max="99" name="earth[eight][reflectMagic]" size="2"/></td></tr>
 
 <tr><td rowspan="3">Level 9 </td>
-	<td>Circle of Power</td><td><input type="text" name="eCircleOfPower" size="2"/></td></tr>
-	<tr><td>Earth Storm / Chaos Storm</td><td><input type="text" name="eEarthStorm" size="2"/></td></tr>
-	<tr><td>Life / Death</td><td><input type="text" name="eLife" size="2"/></td></tr>
+	<td>Circle of Power</td><td><input input type="number" min="1" max="99" name="earth[nine][circleOfPower]" size="2"/></td></tr>
+	<tr><td>Earth Storm / Chaos Storm</td><td><input input type="number" min="1" max="99" name="earth[nine][earthStorm]" size="2"/></td></tr>
+	<tr><td>Life / Death</td><td><input input type="number" min="1" max="99" name="earth[nine][life]" size="2"/></td></tr>
 	
 </table>
-<input type="submit" name="eSubmit" value="Submit" />
-</form>
+
 </div>
+<input type="submit" name="Submit" value="Submit" />
+</form>
 </body>
